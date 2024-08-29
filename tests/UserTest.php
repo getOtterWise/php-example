@@ -16,6 +16,14 @@ class UserTest extends \PHPUnit\Framework\TestCase
 		$this->assertEquals(1, $user->getId());
 	}
 
+	public function test_setName():void {
+		$user = new User(1, 'John Doe');
+
+		$user->setName('Jane Doe');
+
+		$this->assertEquals('Jane Doe', $user->name);
+	}
+
 	public function test_delete():void {
 		/*
 		 * notice here how we have user id = 2, which in our code cannot be deleted, so the delete part is never executed
