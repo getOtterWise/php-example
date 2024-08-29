@@ -25,4 +25,14 @@ class UserTest extends \PHPUnit\Framework\TestCase
 
 		$this->assertFalse($user->delete());
 	}
+
+	public function test_delete_correct():void {
+		/*
+		 * notice here how we have user id = 1, which means we will cover the delete part
+		 */
+		$user = new User(1, 'John Doe');
+
+		$this->assertTrue($user->delete());
+		$this->assertEquals('DELETED', $user->name);
+	}
 }
